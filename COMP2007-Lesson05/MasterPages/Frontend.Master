@@ -6,6 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <asp:ContentPlaceHolder ID="head" runat="server">
         <title>Welcome to Hello World!</title>
     </asp:ContentPlaceHolder>
@@ -20,38 +21,45 @@
     <div id="container">
         <form id="form1" runat="server">
             <div id="PageWrapper">
-                <nav class="navbar navbar-primary">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="#">My WebApp</a><!-- Name of the brand at the beginning -->
+
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#">My WebApp</a><!-- Name of the brand at the beginning -->
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li><a href="Default.aspx">Home</a></li>
+                                <li><a href="Contact.aspx">Contact</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="About.aspx">About</a></li>
+                            </ul>
+                            <!-- nav navbar-nav navbar-right -->
+                        </div>
+                        <!-- bs-example-navbar-collapse-1 -->
                     </div>
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#">About</a></li>
-                        </ul>
-                        <!-- nav navbar-nav navbar-right -->
-                    </div>
-                    <!-- bs-example-navbar-collapse-1 -->
                 </nav>
+
                 <header><a href="/">Header goes here</a></header>
+                
                 <section id="MainContent">
-                    <h1>Hello World</h1>
+                    <asp:ContentPlaceHolder ID="cpMainContent" runat="server"></asp:ContentPlaceHolder>
                 </section>
-                <asp:ContentPlaceHolder ID="cpMainContent" runat="server">
-                </asp:ContentPlaceHolder>
-                <aside id="Sidebar">Sidebar goes here</aside>
-                <footer>Footer goes here</footer>
+                
+                <footer class="nav navbar-fixed-bottom navbar-inverse">
+                    <div class="container-fluid">
+                        <h4 class="navbar-text">© Copyright 2015</h4>
+                    </div>
+                </footer>
             </div>
         </form>
     </div>
